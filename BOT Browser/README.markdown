@@ -6,7 +6,8 @@ It save also a log in a database.
 
 #### Dependancies
 Script requires:
-* **cURL extension** (documentation here: http://www.php.net/manual/en/book.curl.php)
+* **cURL extension**  
+documentation here: http://www.php.net/manual/en/book.curl.php
 * **PDO extension** (documentation here: http://www.php.net/manual/en/book.pdo.php)
 
 ----
