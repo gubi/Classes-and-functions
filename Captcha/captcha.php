@@ -142,7 +142,7 @@ class Captcha {
 				$this->uguale = str_replace("{" . $ku . "}", $vu, $this->uguale);
 			}
 		
-		// Create 300x100 images
+		// Creates 300x100 images
 		$im = imagecreatetruecolor(108, 60);
 		$rand_color = imagecolorallocate($im, rand(0,39),rand(0,100),rand(0,100));
 		$rand_color1 = imagecolorallocate($im, rand(0,39),rand(0,100),rand(0,100));
@@ -151,13 +151,13 @@ class Captcha {
 		$red = imagecolorallocate($im, 0xFF, 0x00, 0x00);
 		$black = imagecolorallocate($im, 0x00, 0x00, 0x00);
 		$white = imagecolorallocate($im, 0xFF, 0xFF, 0xFF);
-
+		
 		$rand_color_bg = imagecolorallocate($im, rand(250,255),rand(250,255),rand(250,255));
-
+		
 		imagefilledrectangle($im, 0, 0, 299, 99, $rand_color_bg);
-
-		// Path to our ttf font file
-		$font_file = "mriamfx.ttf";
+		
+		// Path to the ttf font file
+		$font_file = "miriam_fixed.ttf";
 		
 		// Draw the text
 		imagefttext( $im, 6, rand(-10, 10), 10, 12, $rand_color, $font_file, $this->template, array("lineheight"=>2.0) );
@@ -166,9 +166,9 @@ class Captcha {
 		imagefttext( $im, 6, rand(-10, 10), 82, 12, $rand_color3, $font_file, $this->uguale, array("lineheight"=>2.0) );
 		
 		// ONLY FOR DEBUG
-		// Print the result
+		// Print the result in the image
 		//imagefttext( $im, 30, 0, 104, 30, $red, $font_file, $risultato, array("lineheight"=>2.0) );
-
+		
 		// Draw lines
 		$num_lines = rand(3, 12);
 		for ($fox = 0; $fox < $num_lines; $fox++){
@@ -179,12 +179,11 @@ class Captcha {
 			$y2_rand = rand(0, 108);
 			imageline($im, $x1_rand, $y1_rand, $x2_rand, $y2_rand, $rand_color_line);
 		}
-		
+		// Wave it
 		$this->wave_area($im, 0, 0, 50, 60, 10);
 		
 		// Output image to the browser
 		header("Content-Type: image/png");
-
 		imagepng($im);
 		imagedestroy($im);
 	}
