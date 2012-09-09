@@ -44,11 +44,7 @@ If you would like to generate this one in php this is the code:
 ```Php
 <?php print '<img src="capcha.php?' . rand(99999, 999999999999999) . '" alt="Captcha image" />'; ?>
 ```
-=======
-<img src="capcha.php*?0983747839398372992029183" alt="Captcha image" />
-```
 
->>>>>>> 56a36772db4df9ca26f74bdfc2f1e436c75b0283
 
 
 ## License

@@ -39,7 +39,7 @@ function db_connect($table = ""){
 	return $pdo;
 }
 function browse($uri, $user, $options = ""){
-	// Estrae uno User Agent casuale dal database
+	// Extract a random User Agent fromdatabase
 	$pdo = db_connect("");
 	$uas = $pdo->query("select `string` from `UAS` order by rand() limit 0,1");
 	if ($uas->rowCount() > 0){
