@@ -3,7 +3,7 @@ This class generates a computation captcha image with validation through cookie.
 The result image is different from others due to own particulars: big numbers and factors are composed by other micro-letters, then coloured and distorted with noises lines...
 Only a human that moving back head from screen can read it!
 
-![alt text](https://github.com/gubi/Classes-and-functions/blob/master/Captcha/captcha.png "Captcha example")
+![Captcha example](https://github.com/gubi/Classes-and-functions/blob/master/Captcha/captcha.png?raw=true "Captcha example")
 
 ----
 
