@@ -13,7 +13,7 @@ Script requires:
 
 ### Instruction of use
 1. Import databases UAS and system_logs to your mysql database;
-2. Include browser.php in your script and call
+2. Include browser.php in your script and call  
 ```Php
 browse(string = URI, string = USER, [param = "header", "mixed", ""]);
 ```
