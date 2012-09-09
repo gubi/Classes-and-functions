@@ -40,7 +40,6 @@ You can prevent caching passing random digits as GET data, like this:
 <img src="capcha.php*?0983747839398372992029183" alt="Captcha image" />
 ```
 
-----
 
 
 ## License
