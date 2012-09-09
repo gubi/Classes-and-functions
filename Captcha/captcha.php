@@ -22,6 +22,7 @@
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
 
 header("Content-type: text/plain");
+require_once("blowfish.php");
 class Captcha {
 	function random_string($len){
 		$chars = array("A", "B", "C", "D", "E", "F", "G",
@@ -85,7 +86,7 @@ class Captcha {
 			return @division($numero);
 		}
 	}
-	function generate_captcha() {
+	function generate_captcha($GLOBALS["key"] = "captcha") {
 		$operatori = Array("+", "*", "-");
 		shuffle($operatori);
 
@@ -105,7 +106,7 @@ class Captcha {
 				$risultato = (int)$numero-(int)$numero2;
 				break;
 		}
-		setcookie("rs", $risultato, time()+600, "/");
+		setcookie("rs", PMA_blowfish_encrypt($risultato, $GLOBALS["key"]), time()+600, "/");
 		
 		$num = preg_split("//", $numero, -1, PREG_SPLIT_NO_EMPTY);
 		$num2 = preg_split("//", $numero2, -1, PREG_SPLIT_NO_EMPTY);

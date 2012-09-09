@@ -20,7 +20,7 @@ You can follow documentation here: http://php.net/manual/en/book.image.php
 
 
 ### Instruction of use
-Simply upload the script with the font file in your preferred directory.  
+Simply upload scripts with the font file in your preferred directory.  
 Then, in your form, call the script as image in the src attribute of image tag:
 ```HTML
 <img src="capcha.php" alt="Captcha image" />
@@ -32,7 +32,15 @@ So create an input tag for the result of calculation:
 ```
 
 And compares the user input with cookie.  
-**Do not store cookie value in a hidden form: robots will can read it!**
+Cookie is encrypted with blowfish class made by Mike Cochrane (horde/lib/Cipher/blowfish.php).
+To get the result of value of cookie use this script:
+```Php
+// Set your global encryption key
+$GLOBALS["key"] = "test";
+// Get the result cookie
+print PMA_blowfish_decrypt($_COOKIE["rs"], $GLOBALS["key"]);
+```
+
 
 ### Hack
 You can prevent caching passing random digits as GET data, like this:
