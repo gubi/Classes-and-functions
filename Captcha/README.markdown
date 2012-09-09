@@ -32,7 +32,7 @@ So create an input tag for the result of calculation:
 ```
 
 And compares the user input with cookie.  
-Cookie is encrypted with blowfish class made by Mike Cochrane (horde/lib/Cipher/blowfish.php).
+Cookie is encrypted with blowfish class made by Mike Cochrane ([horde/lib/Cipher/blowfish.php](horde/lib/Cipher/blowfish.php)).
 To get the result of value of cookie use this script:
 ```Php
 // Set your global encryption key
