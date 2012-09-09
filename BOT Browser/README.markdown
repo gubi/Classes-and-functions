@@ -8,7 +8,8 @@ It save also a log in a database.
 Script requires:
 * **cURL extension**  
 documentation here: http://www.php.net/manual/en/book.curl.php
-* **PDO extension** (documentation here: http://www.php.net/manual/en/book.pdo.php)
+* **PDO extension**  
+documentation here: http://www.php.net/manual/en/book.pdo.php
 
 ----
 
