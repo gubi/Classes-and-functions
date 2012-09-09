@@ -32,13 +32,16 @@ So create an input tag for the result of calculation:
 ```
 
 And compares the user input with cookie.  
-Cookie is encrypted with blowfish class made by Mike Cochrane ([horde/lib/Cipher/blowfish.php](horde/lib/Cipher/blowfish.php)).
+Cookie is encrypted with blowfish class made by Mike Cochrane ([horde/lib/Cipher/blowfish.php](horde/lib/Cipher/blowfish.php)).  
 To get the result of value of cookie use this script:
 ```Php
+<?php
 // Set your global encryption key
 $GLOBALS["key"] = "test";
 // Get the result cookie
-print PMA_blowfish_decrypt($_COOKIE["rs"], $GLOBALS["key"]);
+$result_cookie = PMA_blowfish_decrypt($_COOKIE["rs"], $GLOBALS["key"]);
+print $result_cookie;
+?>
 ```
 
 
@@ -48,7 +51,7 @@ You can prevent caching passing random digits as GET data, like this:
 <img src="capcha.php?0983747839398372992029183" alt="Captcha image" />
 ```
 
-If you would like to generate this one in php this is the code: 
+If you would like to generate this one in php here the code: 
 ```Php
 <?php print '<img src="capcha.php?' . rand(99999, 999999999999999) . '" alt="Captcha image" />'; ?>
 ```
