@@ -37,9 +37,13 @@ And compares the user input with cookie.
 ### Hack
 You can prevent caching passing random digits as GET data, like this:
 ```HTML
-<img src="capcha.php*?0983747839398372992029183" alt="Captcha image" />
+<img src="capcha.php?0983747839398372992029183" alt="Captcha image" />
 ```
 
+If you would like to generate this one in php this is the code: 
+```Php
+<?php print '<img src="capcha.php?' . rand(99999, 999999999999999) . '" alt="Captcha image" />'; ?>
+```
 
 
 ## License
